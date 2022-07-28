@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#------------------------------------------
+# Purpose: 
+# Created Date:  Monday 30 May 2022 05:52:40 PM IST
+# Author: Harsh Panchal
+
+# Usage: 
+#------------------------------------------
+
+gksudo -k /bin/echo "got r00t?"
+
+BASENAME=`basename $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS .iso`
+
+sudo umount "/media/$BASENAME"
+
+sudo rmdir "/media/$BASENAME"
+
+zenity --info --text "Successfully unmounted /media/$BASENAME"
+
+exit 0
